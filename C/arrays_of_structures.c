@@ -1,7 +1,8 @@
 
 Array of Structures
 
-1.	Define a structure named Student having its members name, roll no and marks in five subjects. WAP to read the record of 10 students. Calculate the total marks and percentage of each student and print them.
+1.	Define a structure named Student having its members name, roll no and marks in five subjects. WAP to read the record of 10 students. 
+    Calculate the total marks and percentage of each student and print them.
 
 #include <stdio.h>
 struct Student
