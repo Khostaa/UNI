@@ -24,5 +24,6 @@ int main()
     scanf("%d",&n);
     printf("A - Source\nB - Temporary\nC- Destination\n");
     move(n,a,b,t);
+    printf("Success!.\n");
     return 0;
 }
