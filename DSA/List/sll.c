@@ -1,3 +1,4 @@
+// to be modified
 #include <stdio.h>
 #include <stdlib.h>
 struct SLL
@@ -26,7 +27,7 @@ void insert(int element)
 {
     NodeType *NewNode;
     NewNode = createNode(element);
-    if(first == NULL)
+    if(first->next == NULL)
     {
         first = last = NewNode;
         printf("Success\n");
@@ -109,11 +110,9 @@ int main()
             break;
         default:
             printf("Enter 1,2 or 3 only.\n");
+
             break;
         }
     } while (choice!=4);
-    
-
-
     return 0;
 }
