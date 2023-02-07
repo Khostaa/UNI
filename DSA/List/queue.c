@@ -5,57 +5,33 @@ struct SLL
     int data;
     struct SLL *next;
 };
-struct SLL *front,*last;
-void enqueue(int);
-int dequeue();
-int main()
-{
-    int choice,element;
-    do
-    {
-        printf("1.Enqueue\n2.Dequeue\n3.Exit\n");
-        printf("Choice? \n");
-        scanf("%d",&choice);
-        printf(">");
-        switch (choice)
-        {
-        case 1:
-            printf("Enter element to enqueue: ");
-            scanf("%d",&element);
-            enqueue(element);
-            break;
-        case 2: 
-            element = dequeue();
-            printf("%d is Dequeued.\n",element);
-            break;
-        
-        default:
-            printf("Enter 1,2 or 3 only.\n");
-            break;
-        }
-    } while (choice!=3); 
-    return 0;
-}
+struct SLL *front,*rear;
 void enqueue(int element)
 {
-    struct SLL *NewNode;
-    NewNode = (struct SLL*)malloc(sizeof(struct SLL));
-    if(NewNode == NULL)
+    struct SLL *temp1, *temp2;
+    temp1 = (struct SLL *)malloc(sizeof(struct SLL));
+    temp1->data = element;
+    //copying front of queue into another node
+    temp2 = front;
+
+    if(front == NULL)
     {
-        printf("Memory Allocation failed.\n");
+        //if queue is empty, we create front.
+        front = temp1;
+        front -> next = NULL;
     }
     else
     {
-        last -> data = element;
-        last -> next = NULL;
-        if (last == NULL)
-        {
-            
-        }
+        //to navigate to the end of list
+        while(temp2->next != NULL)
+            temp2 = temp2->next;
 
+        //add an element at the rear
+        temp1 -> next = NULL;
+        temp2 ->next = temp1;
     }
-    printf("Success. %d is Enqueued.\n",element);
 }
+   
 int dequeue()
 {
     struct SLL *temp;
@@ -72,8 +48,9 @@ int dequeue()
         if(front -> next == NULL)
         {
             temp = front;
+            front = rear = NULL;
             free(temp);
-            front = last = NULL;
+            
         }
         else //case 2 when there are more than one element
         {
@@ -84,4 +61,35 @@ int dequeue()
         return element;
     }
 }
-
+int main()
+{
+    struct SLL;
+    int choice,element;
+    do
+    {
+        printf("1.Enqueue\n2.Dequeue\n3.Exit\n");
+        printf("Choice? \n");
+        printf(">");
+        scanf("%d",&choice);
+        
+        switch(choice)
+        {
+            case 1:
+                printf("Enter element to enqueue: ");
+                scanf("%d",&element);
+                enqueue(element);
+                break;
+            case 2: 
+                element = dequeue();
+                printf("%d is Dequeued.\n",element);
+                break;
+            case 3: 
+                printf("Bye Bye!\n");
+                break;
+            default:
+                printf("Enter 1,2 or 3 only.\n");
+                break;
+        }
+    } while (choice!=3); 
+    return 0;
+}

@@ -39,7 +39,7 @@ void insert(int element)
     }
     
 }
-void remove()
+void delete()
 {
     NodeType *temp,*temp2;
     if(first==NULL)
@@ -72,16 +72,48 @@ void display()
         printf("list is empty\n");
     }
     else{
-        temp = first;
-        do
-        {
-            pritnf("%d\t",temp->data);
-            temp = temp->next;
-        } while (temp->next != NULL);   
+            printf("Current List is : ");
+            temp = first;
+            do
+            {
+                printf("%d\t",temp->data);
+                temp = temp->next;
+            } while (temp->next != NULL);
+            printf("\n");   
     }
 }
 int main()
 {
+    int element, choice;
+    do
+    {
+        printf("1.Insert\n2.Remove\n3.Display\n4.Exit\n");
+        printf("Choice?\n");
+        printf(">");
+        scanf("%d",&choice);
+        switch (choice)
+        {
+        case 1:
+            printf("\nEnter element to insert: ");
+            scanf("%d",&insert);
+            insert(element);
+            break;
+        case 2:
+            delete();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            printf("Bye Bye!\n");
+            break;
+        default:
+            printf("Enter 1,2 or 3 only.\n");
+            break;
+        }
+    } while (choice!=4);
+    
+
 
     return 0;
 }
