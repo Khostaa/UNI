@@ -113,7 +113,7 @@ int main()
             printf("Bye Bye!\n");
             break;
         default:
-            printf("Enter 1,2 or 3 only.\n");
+            printf("Enter 1,2,3 or 4 only.\n");
 
             break;
         }
