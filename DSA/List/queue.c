@@ -63,7 +63,6 @@ int dequeue()
 }
 int main()
 {
-    struct SLL;
     int choice,element;
     do
     {
@@ -87,7 +86,7 @@ int main()
                 printf("Bye Bye!\n");
                 break;
             default:
-                printf("Enter 1,2 or 3 only.\n");
+                printf("Enter valid choices only.\n");
                 break;
         }
     } while (choice!=3); 

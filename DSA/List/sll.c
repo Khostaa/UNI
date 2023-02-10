@@ -113,7 +113,7 @@ int main()
             printf("Bye Bye!\n");
             break;
         default:
-            printf("Enter 1,2,3 or 4 only.\n");
+            printf("Enter valid choices only.\n");
 
             break;
         }

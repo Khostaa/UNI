@@ -35,7 +35,7 @@ int main()
                 break;
             
             default:
-                printf("Enter 1,2 or 3 only.\n");
+                printf("Enter valid choices only.\n");
                 break;
         }
         
