@@ -23,11 +23,12 @@ NodeType* createNode(int element)
         return NewNode;
     }
 }
+//insertion at beginning
 void insert(int element)
 {
     NodeType *NewNode;
     NewNode = createNode(element);
-    if(first->next == NULL)
+    if(first == NULL)
     {
         first = last = NewNode;
         printf("Success\n");
@@ -40,11 +41,12 @@ void insert(int element)
     }
     
 }
-void delete()
+void remove()
 {
     NodeType *temp,*temp2;
-    if(first==NULL)
+    if(first == NULL)
         printf("List Empty!\n");
+    // if list contains only one element
     else if (first == last)
     {
         temp = first;
@@ -96,7 +98,7 @@ int main()
         {
         case 1:
             printf("\nEnter element to insert: ");
-            scanf("%d",&insert);
+            scanf("%d",&element);
             insert(element);
             break;
         case 2:
