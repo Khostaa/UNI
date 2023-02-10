@@ -1,4 +1,4 @@
-// to be modified
+//Implementation of Singly Linked List
 #include <stdio.h>
 #include <stdlib.h>
 struct SLL
@@ -41,47 +41,49 @@ void insert(int element)
     }
     
 }
-void remove()
+void delete()
 {
     NodeType *temp,*temp2;
     if(first == NULL)
-        printf("List Empty!\n");
+        printf("List is Empty!\n");
     // if list contains only one element
-    else if (first == last)
+    else if (first->next == NULL)
     {
         temp = first;
-        first = last = NULL;
+        first = NULL;
         free(temp);
     }
     else
     {
         temp = first;
+        //deletion from last
         while (temp->next!=NULL)
         {
-            temp = temp->next;
+            temp2 = temp;
+            temp = temp->next; 
         }
-        temp2 = temp->next;
-        printf("Deleted item is %d\n",temp2->data);
-        free(temp2);
-        last = temp;
+        temp2->next = NULL;
+        printf("Deleted item is %d\n",temp->data);
+        free(temp);
+        // last = temp;~~
         printf("Success\n");
     }
 }
 void display()
 {
     NodeType *temp;
+    temp = first;
     if(first == NULL)
     {
         printf("list is empty\n");
     }
     else{
             printf("Current List is : ");
-            temp = first;
             do
             {
                 printf("%d\t",temp->data);
                 temp = temp->next;
-            } while (temp->next != NULL);
+            } while (temp != NULL);
             printf("\n");   
     }
 }
