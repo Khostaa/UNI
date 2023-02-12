@@ -1,12 +1,13 @@
+//selection sort
 #include <stdio.h>
 #include <stdlib.h>
-#define size 100
+#define size 100000
 //input function
 void input (int a[], int n)
 {
     for (int i=0;i<n;i++)
     {
-        a[i] = rand()%100; //modulo defines range of randomly generated integers
+        a[i] = rand();
     }
             
 }
@@ -26,22 +27,29 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
-//Bubble Sort function
-void BubbleSort(int a[],int n)
+//SelectionSort function
+void SelectionSort(int a[],int n)
 {
-    for(int i = 0;i<n-1;i++)
+    int i,p,least;
+    for(i =0;i<n;i++)
     {
-        for(int j = 0; j<n-i-1;j++)
+        p = i;
+        least = a[i];
+        for(int j=i+1;j<n;j++)
         {
-            if (a[j] > a[j+1])
+            if(a[j]<least)
             {
-                swap(&a[j],&a[j+1]);
+                least = a[j];
+                p = j;
             }
         }
+        if (i != p)
+        {
+            swap(&a[i],&a[p]);
+        }
     }
+    
 }
-
-
 int main()
 {
     int a[size];
@@ -51,7 +59,7 @@ int main()
     input(a,n);
     printf("\nBefore sorting: ");
     display(a,n);
-    BubbleSort(a,n);
+    SelectionSort(a,n);
     printf("\nAfter Sorting: ");
     display(a,n);
     return 0;
