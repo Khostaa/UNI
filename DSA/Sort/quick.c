@@ -32,22 +32,37 @@ void swap(int *a, int *b)
 }
 int partition(int a[],int l,int r)
 {
-    int x = l;
-    int y = r;
-    int pivot = a[l];
-    while(x<y)
-    {
-        while (a[x]<=pivot)
-            x++;
-        while (a[y]>pivot)
-            y--;
-        if (x<y)
+    // int x = l;
+    // int y = r;
+    // int pivot = a[l];
+    // while(x<y)
+    // {
+    //     while (a[x]<pivot)
+    //         x++;
+    //     while (a[y]>pivot)
+    //         y--;
+    //     if (x<y)
+    //     {
+    //         swap(&a[x],&a[y]);
+
+    //     }
+    //     swap(&a[l],&a[y]);
+    //     return y;
+    // }
+
+    //algorithm from book
+        int x = a[r];
+        int i = l - 1;
+        for(int j=l;j<=r-1;j++)
         {
-            swap(&a[x],&a[y]);
+            if (a[j]<=x)
+                {
+                    i = i + 1;
+                    swap(&a[i],&a[j]);
+                }
         }
-        swap(&a[l],&a[y]);
-        return y;
-    }
+        swap(&a[i+1],&a[r]);
+        return i+1;
 }
 void QuickSort(int a[],int l,int r)
 {
@@ -71,7 +86,6 @@ int main()
     display(a,n);
     printf("Sorting Started.\n");
     QuickSort(a,0,n-1); //starting address(Leftmost) of array is 0 and and end address(rightmost) is n-1
-    printf("Finished\n");
     printf("\nAfter Sorting: ");
     display(a,n);
     return 0;
