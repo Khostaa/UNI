@@ -1,15 +1,14 @@
-//to be revised
 // Calculating elapsed time in C
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define size 100000
+#define size 1000000
 
 void input (int a[], int n)
 {
     for (int i=0;i<n;i++)
     {
-        a[i] = rand()%100; //modulo defines range of randomly generated integers
+        a[i] = rand(); //modulo defines range of randomly generated integers
     }
             
 }
@@ -199,7 +198,13 @@ void MergeSort(int arr[], int l, int r) {
     merge(arr, l, m, r);
   }
 }
-
+void elapsed(long tick1, long tick2)
+{
+  long elapsed = tick2 - tick1;
+  printf("Clock ticks used: %d\n",elapsed);
+  double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
+  printf("Elasped time: %lf seconds\n",elapsed_time);
+}
 
 int main()
 {
@@ -213,82 +218,58 @@ int main()
     scanf("%d",&n);
     input(a,n);
     printf("\nBefore sorting: " );
-    display(a,n);
+    // display(a,n);
     long tick1 = clock();
-    do
-    {
-        switch (choice)
+    switch (choice)
      {
         case 1: 
             BubbleSort(a,n);
             long tick2 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick2);
             break;
         case 2:
             SelectionSort(a,n);
-            long tick2 = clock();
+            long tick3 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick3);
             break;
         case 3:
         // as starting index of array is 0 and final is n-1
             QuickSort(a,0,n-1);
-            long tick2 = clock();
+            long tick4 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick4);
             break;
         case 4:
             HeapSort(a,n);
-            long tick2 = clock();
+            long tick5 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick5);
             break;
         case 5:
             InsertionSort(a,n);
-            long tick2 = clock();
+            long tick6 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick6);
             break;
         case 6:
             ShellSort(a,n);
-            long tick2 = clock();
+            long tick7 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
-            break;
+            // display(a,n);
+            elapsed(tick1,tick7);
         case 7:
             MergeSort(a,0,n-1);
-            long tick2 = clock();
+            long tick8 = clock();
             printf("After Sorting: ");
-            display(a,n);
-            long elapsed = tick2 - tick1;
-            printf("Clock ticks used: %d\n",elapsed);
-            double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-            printf("Elasped time: %lf seconds\n",elapsed_time);
+            // display(a,n);
+            elapsed(tick1,tick8);
             break;
         case 8:
             printf("Bye Bye!\n");
@@ -297,7 +278,6 @@ int main()
             printf("Enter valid numbers only.\n");
             break;
      }
-    } while (choice != 8);
      
     // long tick2 = clock();
     // printf("After Sorting: ");
