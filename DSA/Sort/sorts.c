@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define size 1000000
+#define size 100000
 
 void input (int a[], int n)
 {
@@ -12,6 +12,7 @@ void input (int a[], int n)
     }
             
 }
+
 // display function
 void display(int a[],int n)
 {
@@ -21,6 +22,7 @@ void display(int a[],int n)
     }
     printf("\n");
 }
+
 //swap function
 void swap(int *a, int *b)
 {
@@ -28,6 +30,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
+
 //Bubble Sort function
 void BubbleSort(int a[],int n)
 {
@@ -42,6 +45,7 @@ void BubbleSort(int a[],int n)
         }
     }
 }
+
 //Selection sort
 void SelectionSort(int a[],int n)
 {
@@ -65,6 +69,7 @@ void SelectionSort(int a[],int n)
     }
     
 }
+
 //Quick Sort
 int partition(int a[],int l,int r)
 {
@@ -90,6 +95,7 @@ void QuickSort(int a[],int l,int r)
         QuickSort(a,p+1,r);
     }
 }
+
 //Heapify
 void heapify(int arr[], int n, int i) 
 {
@@ -107,9 +113,7 @@ void heapify(int arr[], int n, int i)
       heapify(arr, n, largest);
     }
   }
-  
-
-  void HeapSort(int arr[], int n) 
+void HeapSort(int arr[], int n) 
   {
     for (int i = n / 2 - 1; i >= 0; i--)
       heapify(arr, n, i);
@@ -136,6 +140,7 @@ int InsertionSort(int a[],int n)
         a[j+1] = temp;
     }
 }
+
 //Shell Sort Function
 void ShellSort(int array[], int n) 
 {
@@ -150,6 +155,7 @@ void ShellSort(int array[], int n)
     }
   }
 }
+
 //Merge Sort
 void merge(int arr[], int p, int q, int r) 
 {
@@ -198,6 +204,8 @@ void MergeSort(int arr[], int l, int r) {
     merge(arr, l, m, r);
   }
 }
+
+//Calculating elapsed time
 void elapsed(long tick1, long tick2)
 {
   long elapsed = tick2 - tick1;
@@ -208,9 +216,13 @@ void elapsed(long tick1, long tick2)
 
 int main()
 {
-    int a[size];
-    int n,choice;
-    printf("\n1.Bubble Sort\n2.Selection Sort\n3.Quick Sort\n4.Heap Sort\n5.Insertion Sort\n6.Shell Sort\n7.Merge Sort.\n8.Exit\n");
+  int a[size];
+  int n,choice;
+  long tick1,tick3,tick5,tick7,tick9,tick11,tick13;
+  printf("Code reached here.");
+  do
+  {
+    printf("\n1.Bubble Sort\t2.Selection Sort\t3.Quick Sort\t4.Heap Sort\n5.Insertion Sort\t6.Shell Sort\t7.Merge Sort.\t8.Exit\n");
     printf("Choice?\n");
     printf(">");
     scanf("%d",&choice);
@@ -218,73 +230,73 @@ int main()
     scanf("%d",&n);
     input(a,n);
     printf("\nBefore sorting: " );
-    // display(a,n);
-    long tick1 = clock();
+    display(a,n);
     switch (choice)
-     {
-        case 1: 
-            BubbleSort(a,n);
-            long tick2 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick2);
-            break;
-        case 2:
-            SelectionSort(a,n);
-            long tick3 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick3);
-            break;
-        case 3:
-        // as starting index of array is 0 and final is n-1
-            QuickSort(a,0,n-1);
-            long tick4 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick4);
-            break;
-        case 4:
-            HeapSort(a,n);
-            long tick5 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick5);
-            break;
-        case 5:
-            InsertionSort(a,n);
-            long tick6 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick6);
-            break;
-        case 6:
-            ShellSort(a,n);
-            long tick7 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick7);
-        case 7:
-            MergeSort(a,0,n-1);
-            long tick8 = clock();
-            printf("After Sorting: ");
-            // display(a,n);
-            elapsed(tick1,tick8);
-            break;
-        case 8:
-            printf("Bye Bye!\n");
-            exit(0);
-        default:
-            printf("Enter valid numbers only.\n");
-            break;
-     }
-     
-    // long tick2 = clock();
-    // printf("After Sorting: ");
-    // display(a,n);
-    // long elapsed = tick2 - tick1;
-    // printf("Clock ticks used: %d\n",elapsed);
-    // double elapsed_time = (double)elapsed/CLOCKS_PER_SEC;
-    // printf("Elasped time: %lf seconds\n",elapsed_time);
-    return 0;
+    {
+      case 1: 
+          tick1 = clock();
+          BubbleSort(a,n);
+          long tick2 = clock();
+          printf("After Sorting: ");
+          display(a,n);
+          elapsed(tick1,tick2);
+          break;
+      case 2:
+          tick3 = clock();
+          SelectionSort(a,n);
+          long tick4 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick3,tick4);
+          break;
+      case 3:
+          tick5 = clock();
+      // as starting index of array is 0 and final is n-1
+          QuickSort(a,0,n-1);
+          long tick6 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick5,tick6);
+          break;
+      case 4:
+          tick7 = clock();
+          HeapSort(a,n);
+          long tick8 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick7,tick8);
+          break;
+      case 5:
+          tick9 = clock();
+          InsertionSort(a,n);
+          long tick10 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick9,tick10);
+          break;
+      case 6:
+          tick11 = clock();
+          ShellSort(a,n);
+          long tick12 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick11,tick12);
+      case 7:
+          tick13 = clock();
+          MergeSort(a,0,n-1);
+          long tick14 = clock();
+          printf("After Sorting: ");
+          // display(a,n);
+          elapsed(tick13,tick14);
+          break;
+      case 8:
+          printf("Bye Bye!\n");
+          exit(0);
+      default:
+          printf("Enter valid numbers only.\n");
+          break;
+    }
+  }while(choice!=8);
+    
+  return 0;
 }
