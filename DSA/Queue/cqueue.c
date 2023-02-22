@@ -30,7 +30,7 @@ void enqueue(struct queue *q,int element)
 int dequeue(struct queue *q)
 {
     //removing element for queue. as in Queue its FIFO
-    int ret = q->data[q->f]; // stroing front element into ret
+    int ret = q->data[q->f]; // storing front element into ret
     q->f = (q->f+1)%max;
     q->size-=1;//increasing front as following turn will come.
     return ret;
