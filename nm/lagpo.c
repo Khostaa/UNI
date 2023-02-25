@@ -5,18 +5,18 @@
 int main()
 {
     int n;
-    int x[100],y[100],xp,yp;
+    float x[100],y[100],xp,yp;
     printf("\nEnter the value of n: ");
     scanf("%d",&n);
     for (int i=1;i<=n;i++)
     {
         printf("\nEnter x[%d]: ",i);
-        scanf("%d",&x[i]);
+        scanf("%f",&x[i]);
         printf("\nEnter y[%d]: ",i);
-        scanf("%d",&y[i]);
+        scanf("%f",&y[i]);
     }
     printf("Enter xp: ");
-    scanf("%d",&xp);
+    scanf("%f",&xp);
     
     yp = 0;
 
@@ -33,7 +33,7 @@ int main()
         yp = yp + p * y[i];
     }
 
-    printf("\nThe required value of yp is %d",yp);
+    printf("\nThe required value of yp is %.3f",yp);
 
     return 0;
 }

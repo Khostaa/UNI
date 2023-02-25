@@ -3,8 +3,9 @@
 #include <ctime>
 #include <ratio>
 #include <chrono>
-#define size 100000
+#define size 1000
 using namespace std;
+using namespace std:: chrono;
 
 //input function
 void input (int a[], int n)
@@ -212,7 +213,8 @@ int main()
 {
     int a[size];
     int n,choice;
-    using namespace std:: chrono;
+    time_t t;
+    srand((unsigned) time(&t));
     do
     {
         cout << "\n1.Bubble Sort\t2.Selection Sort\t3.Quick Sort\t4.Heap Sort\n5.Insertion Sort\t6.Shell Sort\t7.Merge Sort.\t8.Exit\n";
@@ -226,65 +228,65 @@ int main()
         switch(choice)
         {
             case 1:
-                steady_clock::time_point t1 = steady_clock ::now();
+                high_resolution_clock::time_point t1 = high_resolution_clock ::now();
                 BubbleSort(a,n);
-                steady_clock::time_point t2 = steady_clock::now();
-                duration <double>time_span1 = duration_cast<duration<double>>(t2-t1);
-                cout<<"Elapsed time(s): "<<time_span1.count();
+                high_resolution_clock::time_point t2 = high_resolution_clock::now();
+                auto duration1 = duration_cast<microseconds>(t2-t1).count();
+                cout<<"Elapsed time: "<<duration1 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 2:
-                steady_clock::time_point t3 = steady_clock ::now();
+                high_resolution_clock::time_point t3 = high_resolution_clock ::now();
                 SelectionSort(a,n);
-                steady_clock::time_point t4 = steady_clock::now();
-                duration <double>time_span2 = duration_cast<duration<double>>(t4-t3);
-                cout<<"Elapsed time(s): "<<time_span2.count();
+                high_resolution_clock::time_point t4 = high_resolution_clock::now();
+                auto duration2 = duration_cast<microseconds>(t4-t3).count();
+                cout<<"Elapsed time: "<<duration2 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 3:
-                steady_clock::time_point t5 = steady_clock ::now();
-                QuickSort(a,0,n-1);
-                steady_clock::time_point t6 = steady_clock::now();
-                duration <double>time_span3 = duration_cast<duration<double>>(t6-t5);
-                cout<<"Elapsed time(s): "<<time_span3.count();
+                high_resolution_clock::time_point t5 = high_resolution_clock ::now();
+                BubbleSort(a,n);
+                high_resolution_clock::time_point t6 = high_resolution_clock::now();
+                auto duration3 = duration_cast<microseconds>(t6-t5).count();
+                cout<<"Elapsed time: "<<duration3 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 4:
-                steady_clock::time_point t7 = steady_clock ::now();
-                HeapSort(a,n);
-                steady_clock::time_point t8 = steady_clock::now();
-                duration <double>time_span4 = duration_cast<duration<double>>(t8-t7);
-                cout<<"Elapsed time(s): "<<time_span4.count();
+                high_resolution_clock::time_point t7 = high_resolution_clock ::now();
+                QuickSort(a,0,n-1);
+                high_resolution_clock::time_point t8 = high_resolution_clock::now();
+                auto duration4 = duration_cast<microseconds>(t8-t7).count();
+                cout<<"Elapsed time: "<<duration4 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 5:
-                steady_clock::time_point t9 = steady_clock ::now();
-                BubbleSort(a,n);
-                steady_clock::time_point t10 = steady_clock::now();
-                duration <double>time_span5 = duration_cast<duration<double>>(t10-t9);
-                cout<<"Elapsed time(s): "<<time_span5.count();
+                high_resolution_clock::time_point t9 = high_resolution_clock ::now();
+                HeapSort(a,n);
+                high_resolution_clock::time_point t10 = high_resolution_clock::now();
+                auto duration5 = duration_cast<microseconds>(t10-t9).count();
+                cout<<"Elapsed time: "<<duration5 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 6:
-                steady_clock::time_point t11 = steady_clock ::now();
-                BubbleSort(a,n);
-                steady_clock::time_point t12 = steady_clock::now();
-                duration <double>time_span6 = duration_cast<duration<double>>(t12-t11);
-                cout<<"Elapsed time(s): "<<time_span6.count();
+                high_resolution_clock::time_point t11 = high_resolution_clock ::now();
+                ShellSort(a,n);
+                high_resolution_clock::time_point t12 = high_resolution_clock::now();
+                auto duration6 = duration_cast<microseconds>(t12-t11).count();
+                cout<<"Elapsed time: "<<duration6 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
                 break;
             case 7:
-                steady_clock::time_point t13 = steady_clock ::now();
-                BubbleSort(a,n);
-                steady_clock::time_point t14 = steady_clock::now();
-                duration <double>time_span7 = duration_cast<duration<double>>(t14-t13);
-                cout<<"Elapsed time(s): "<<time_span7.count();
+                high_resolution_clock::time_point t13 = high_resolution_clock ::now();
+                MergeSort(a,0,n-1);
+                high_resolution_clock::time_point t14 = high_resolution_clock::now();
+                auto duration7 = duration_cast<microseconds>(t14-t13).count();
+                cout<<"Elapsed time: "<<duration7 << " microseconds";
                 cout << "After Sorting: ";
                 display(a,n);
             case 8:
