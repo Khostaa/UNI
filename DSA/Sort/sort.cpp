@@ -1,11 +1,14 @@
 #include <iostream>
-#include <cmath>
 #include <ctime>
+#include <algorithm>
+#include <cstdlib>
+#include <cmath>
 #include <ratio>
-#include <chrono>
-#define size 1000
+
 using namespace std;
-using namespace std:: chrono;
+using std::time;
+using namespace std::chrono;
+#define size 1000
 
 //input function
 void input (int a[], int n)
@@ -215,6 +218,7 @@ int main()
     int n,choice;
     time_t t;
     srand((unsigned) time(&t));
+    std :: clock_t start_p = std::clock();
     do
     {
         cout << "\n1.Bubble Sort\t2.Selection Sort\t3.Quick Sort\t4.Heap Sort\n5.Insertion Sort\t6.Shell Sort\t7.Merge Sort.\t8.Exit\n";
@@ -293,7 +297,7 @@ int main()
                 cout <<"Bye Bye!\n";
                 break;
             default:
-                printf("Enter valid numbers only.\n");
+                cout << "Enter valid numbers only.\n";
                 break;
         }
     }while(choice!=8);
