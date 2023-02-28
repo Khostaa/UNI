@@ -246,7 +246,7 @@ int main()
           SelectionSort(a,n);
           long tick4 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick3,tick4);
           break;
       case 3:
@@ -255,7 +255,7 @@ int main()
           QuickSort(a,0,n-1);
           long tick6 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick5,tick6);
           break;
       case 4:
@@ -263,7 +263,7 @@ int main()
           HeapSort(a,n);
           long tick8 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick7,tick8);
           break;
       case 5:
@@ -271,7 +271,7 @@ int main()
           InsertionSort(a,n);
           long tick10 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick9,tick10);
           break;
       case 6:
@@ -279,14 +279,15 @@ int main()
           ShellSort(a,n);
           long tick12 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick11,tick12);
+          break;
       case 7:
           tick13 = clock();
           MergeSort(a,0,n-1);
           long tick14 = clock();
           printf("After Sorting: ");
-          // display(a,n);
+          display(a,n);
           elapsed(tick13,tick14);
           break;
       case 8:
@@ -296,7 +297,7 @@ int main()
           printf("Enter valid numbers only.\n");
           break;
     }
-  }while(choice!=8);
+  }while(choice <=8);
     
   return 0;
 }

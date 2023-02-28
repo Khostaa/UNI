@@ -227,8 +227,8 @@ int main()
         cout << "Enter no. of elements: ";
         cin >> n;
         input(a,n);
-        cout << "\nBefore sorting: ";
-        display(a,n);
+        // cout << "\nBefore sorting: ";
+        // display(a,n);
         switch(choice)
         {
             case 1:
@@ -246,8 +246,8 @@ int main()
                 high_resolution_clock::time_point t4 = high_resolution_clock::now();
                 auto duration2 = duration_cast<microseconds>(t4-t3).count();
                 cout<<"Elapsed time: "<<duration2 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
                 break;
             case 3:
                 high_resolution_clock::time_point t5 = high_resolution_clock ::now();
@@ -255,8 +255,8 @@ int main()
                 high_resolution_clock::time_point t6 = high_resolution_clock::now();
                 auto duration3 = duration_cast<microseconds>(t6-t5).count();
                 cout<<"Elapsed time: "<<duration3 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
                 break;
             case 4:
                 high_resolution_clock::time_point t7 = high_resolution_clock ::now();
@@ -264,8 +264,8 @@ int main()
                 high_resolution_clock::time_point t8 = high_resolution_clock::now();
                 auto duration4 = duration_cast<microseconds>(t8-t7).count();
                 cout<<"Elapsed time: "<<duration4 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
                 break;
             case 5:
                 high_resolution_clock::time_point t9 = high_resolution_clock ::now();
@@ -273,8 +273,8 @@ int main()
                 high_resolution_clock::time_point t10 = high_resolution_clock::now();
                 auto duration5 = duration_cast<microseconds>(t10-t9).count();
                 cout<<"Elapsed time: "<<duration5 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
                 break;
             case 6:
                 high_resolution_clock::time_point t11 = high_resolution_clock ::now();
@@ -282,8 +282,8 @@ int main()
                 high_resolution_clock::time_point t12 = high_resolution_clock::now();
                 auto duration6 = duration_cast<microseconds>(t12-t11).count();
                 cout<<"Elapsed time: "<<duration6 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
                 break;
             case 7:
                 high_resolution_clock::time_point t13 = high_resolution_clock ::now();
@@ -291,8 +291,8 @@ int main()
                 high_resolution_clock::time_point t14 = high_resolution_clock::now();
                 auto duration7 = duration_cast<microseconds>(t14-t13).count();
                 cout<<"Elapsed time: "<<duration7 << " microseconds";
-                cout << "After Sorting: ";
-                display(a,n);
+                // cout << "After Sorting: ";
+                // display(a,n);
             case 8:
                 cout <<"Bye Bye!\n";
                 break;
