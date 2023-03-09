@@ -65,7 +65,7 @@ void delete()
         temp2->next = NULL;
         printf("Deleted item is %d\n",temp->data);
         free(temp);
-        // last = temp;~~
+        // last = temp;
         printf("Success\n");
     }
 }
