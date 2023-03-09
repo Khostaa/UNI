@@ -1,4 +1,5 @@
-//Implementation of Singly Linked List
+//Implementation of Singly Linked List with all Functions
+
 #include <stdio.h>
 #include <stdlib.h>
 struct SLL
