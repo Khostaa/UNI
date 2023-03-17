@@ -52,7 +52,7 @@ void dequeue()
     else //if queue contains more than one element
     {
         temp = front;  //store front to temporary
-        front = front->next; // 2nd becomes front
+        front = front->next; // Change front to point to second node
         printf("%d is dequeued.\n",temp->data);
         free(temp); //delete front
     }
