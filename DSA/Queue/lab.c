@@ -1,4 +1,4 @@
-//Implementation of linear queue
+//Static Implementation of linear queue
 #include <stdio.h>
 #define max 10
 #define true 1

@@ -1,4 +1,4 @@
-//Implementation of circular queue
+//Static Implementation of circular queue
 #include <stdio.h>
 #define max 3
 #define true 1
