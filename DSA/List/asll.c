@@ -132,6 +132,7 @@ void deleteatend()
     else
     {
         temp = first;
+        /*
         // navigate to last of list
         while (temp->next!=NULL)
         {
@@ -141,7 +142,17 @@ void deleteatend()
         temp2->next = NULL; // after deletion of last node, Current 2nd last node becomes Last node and point to NULL
         printf("Deleted item is %d\n",temp->data);
         free(temp); // remove current last node
-        printf("Success\n");
+        printf("Success\n"); 
+        */
+       // Alternative for above code
+       while (temp->next->next!=NULL) // Traverse to 2nd last
+        {
+            temp = temp->next; // temp holds second last node
+ 	    }
+        temp2 = temp -> next; //store last node (temp->next points to last node) in temp2
+        temp ->next = NULL; // 2nd last becomes last and points to NULL
+        printf("Deleted item is %d\n",temp2->data);
+        free(temp2); //deallocate the memory
 
     }
 }
@@ -168,9 +179,10 @@ void deleteatposition(int position)
             i++;
         }
         temp2 = temp->next; // temp2 holds current position node
-        temp->next = temp2->next; // Current position node points to its following node which will replace it
+        // temp -> next = temp2 -> next or code below
+        temp->next = temp->next->next; // Current position-1 node will point to pos+1 node
         printf("Deleted item is %d\n",temp2->data);
-        free(temp2);    // Current position node is freed
+        free(temp2); // Current position node is freed
     }
 }
 void display()
